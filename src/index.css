@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #04040f;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.35);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.65);
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Glow utilities */
+.glow-indigo {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.25), 0 0 80px rgba(99, 102, 241, 0.1);
+}
+.glow-cyan {
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.25), 0 0 80px rgba(34, 211, 238, 0.1);
+}
+.glow-emerald {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.25), 0 0 80px rgba(16, 185, 129, 0.1);
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 60px rgba(99, 102, 241, 0.5), 0 0 120px rgba(99, 102, 241, 0.2);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 40px rgba(34, 211, 238, 0.6);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 40%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated border */
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(99, 102, 241, 0.25); box-shadow: 0 0 20px rgba(99, 102, 241, 0.08); }
+  50% { border-color: rgba(99, 102, 241, 0.55); box-shadow: 0 0 40px rgba(99, 102, 241, 0.18); }
+}
+.animated-border {
+  animation: borderPulse 4s ease-in-out infinite;
+}
+
+/* Ring pulse */
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.03); }
+}
+.ring-pulse {
+  animation: ringPulse 4s ease-in-out infinite;
+}
+
+/* Premium input */
+.premium-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+.premium-input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+  background: rgba(99, 102, 241, 0.04);
+}
+.premium-input::placeholder {
+  color: rgba(148, 163, 184, 0.35);
+}
+
+/* Native date picker — force dark mode */
+input[type="date"] {
+  color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6) sepia(1) saturate(3) hue-rotate(200deg);
+  cursor: pointer;
+  opacity: 0.6;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Selection */
+::selection {
+  background: rgba(99, 102, 241, 0.28);
+  color: white;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+.shimmer {
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* Dot grid background pattern */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
